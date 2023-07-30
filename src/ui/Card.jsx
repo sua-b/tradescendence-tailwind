@@ -14,7 +14,7 @@ function Image({ src, alt }) {
 
 function Title({ children }) {
   return (
-    <h2 className='text-center h-14 font-semibold p-2 bg-gray-100 flex items-center justify-center'>
+    <h2 className='text-center h-14 w-full text-sm font-semibold p-2 bg-gray-100 flex items-center justify-center'>
       {children}
     </h2>
   );
