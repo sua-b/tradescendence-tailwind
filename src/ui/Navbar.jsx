@@ -7,32 +7,23 @@ import {
 
 export default function Navbar() {
   return (
-    <nav className='flex justify-end items-center'>
+    <nav className='justify-end items-center hidden md:flex'>
       <ul className='invisible md:visible flex gap-2'>
         <li>
-          <NavLink
-            to='/'
-            className={`flex items-center gap-2 text-xl p-2 rounded-md hover:bg-gray-200 aria-[current=page]:bg-gray-200`}
-          >
-            <LiaHomeSolid className='inline-block' />
+          <NavLink to='/' className={menuItem}>
+            <LiaHomeSolid />
             <span>Home</span>
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to='/blogs'
-            className='flex items-center gap-2 text-xl p-2 rounded-md hover:bg-gray-200 aria-[current=page]:bg-gray-200'
-          >
-            <LiaBookOpenSolid className='inline-block' />
+          <NavLink to='/blogs' className={menuItem}>
+            <LiaBookOpenSolid />
             <span>Blogs</span>
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to='/about'
-            className='flex items-center gap-2 text-xl p-2 rounded-md hover:bg-gray-200 aria-[current=page]:bg-gray-200'
-          >
-            <LiaInfoCircleSolid className='inline-block' />
+          <NavLink to='/about' className={menuItem}>
+            <LiaInfoCircleSolid />
             <span>About</span>
           </NavLink>
         </li>
@@ -40,3 +31,6 @@ export default function Navbar() {
     </nav>
   );
 }
+
+const menuItem =
+  'flex items-center gap-2 text-xl p-2 rounded-md hover:bg-gray-200  aria-[current=page]:bg-gray-200';

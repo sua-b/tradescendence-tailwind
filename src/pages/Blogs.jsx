@@ -9,14 +9,16 @@ export default function Blogs() {
     navigate(`/blogs/${id}`);
   }
   return (
-    <ul className='flex flex-row flex-wrap gap-8'>
+    <ul className='flex flex-row flex-wrap gap-6 justify-center'>
       {blog.map((item) => (
         <Card key={item.id}>
           <Card.Image src={item.image_url} alt={item.title} />
           <Card.Title>{item.title}</Card.Title>
           <Card.Author>By: {item.author}</Card.Author>
           {/* <Card.Body>{item.content}</Card.Body> */}
-          <Button onClick={() => handleClick(item.id)}>Read more</Button>
+          <Button color='teal' onClick={() => handleClick(item.id)}>
+            Read more
+          </Button>
         </Card>
       ))}
     </ul>

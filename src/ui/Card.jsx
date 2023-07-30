@@ -1,6 +1,6 @@
 export default function Card({ children }) {
   return (
-    <li className='w-52 rounded-lg shadow-lg shadow-gray-300 hover:scale-110 transition-all grid grid-rows-[3fr_1fr_3_1fr] grid-cols-1 place-items-center'>
+    <li className='w-56 md:w-40 lg:w-56 rounded-lg shadow-lg shadow-gray-300 hover:scale-110 transition-all grid grid-rows-[3fr_1fr_3_1fr] grid-cols-1 place-items-center'>
       {children}
     </li>
   );
@@ -8,7 +8,7 @@ export default function Card({ children }) {
 
 function Image({ src, alt }) {
   return (
-    <img className='h-40 w-52 object-cover rounded-t-lg' src={src} alt={alt} />
+    <img className='h-40 w-full object-cover rounded-lg' src={src} alt={alt} />
   );
 }
 
@@ -19,9 +19,10 @@ function Title({ children }) {
     </h2>
   );
 }
+
 function Author({ children }) {
   return (
-    <p className='text-center text-sm text-gray-500 truncate w-52 px-4'>
+    <p className='text-center text-sm text-gray-500 truncate w-full px-4'>
       {children}
     </p>
   );

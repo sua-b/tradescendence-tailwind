@@ -1,9 +1,25 @@
-export default function Button({ onClick, children }) {
+const sizes = {
+  small: 'px-3 py-1 border-0 rounded-lg text-white text-md m-2',
+  medium: 'px-3 py-1 border-0 rounded-lg text-white text-xl font-semibold m-2',
+};
+
+const colors = {
+  blue: 'bg-blue-500',
+  teal: 'bg-teal-500',
+  green: 'bg-green-50',
+  yellow: 'bg-yellow-500',
+  red: 'bg-red-500',
+  orage: 'bg-orange-500',
+};
+
+export default function Button({
+  onClick,
+  children,
+  size = 'small',
+  color = 'blue',
+}) {
   return (
-    <button
-      className='w-28 p-1 border-0 rounded-md shadow-md text-white bg-blue-500 text-lg  shadow-blue-400 m-2'
-      onClick={onClick}
-    >
+    <button className={`${sizes[size]}  ${colors[color]}`} onClick={onClick}>
       {children}
     </button>
   );

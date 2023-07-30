@@ -1,14 +1,17 @@
-import { NavLink } from 'react-router-dom';
 import Navbar from './Navbar';
+import Logo from './Logo';
+import NavMenu from './NavMenu';
+
+const headerBase =
+  'bg-gray-100 sticky top-0 h-14 flex justify-center items-center border-b-2 z-50';
+const headerMd = 'md:h-16 md:col-span-2 md:grid md:grid-cols-[auto_1fr_auto] ';
 
 export default function Header() {
   return (
-    <header className='bg-gray-100 py-0 px-8 h-20 col-span-2 grid grid-cols-[auto_1fr_auto] grid-rows-[5rem] sticky top-0'>
-      <NavLink className='flex items-center gap-2 pr-4 mr-4' to='/'>
-        <img className='h-14' src='/icon.png' alt='logo' />
-        <span className='text-xl font-bold text-blue-700'>Tradescendence</span>
-      </NavLink>
+    <header className={`${headerBase} ${headerMd}`}>
+      <Logo />
       <Navbar />
+      <NavMenu />
     </header>
   );
 }
