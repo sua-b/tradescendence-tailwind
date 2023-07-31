@@ -1,4 +1,4 @@
-import Quotes from './Quotes';
+import Quotes from '../Quotes';
 
 export default function Sidebar() {
   return (

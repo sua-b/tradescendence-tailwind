@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
-import Sidebar from './Sidebar';
 
 export default function AppLayout() {
   return (
@@ -9,8 +8,6 @@ export default function AppLayout() {
         <Header />
 
         <Outlet />
-
-        {/* <Sidebar /> */}
       </div>
     </div>
   );
