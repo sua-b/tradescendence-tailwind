@@ -1,4 +1,4 @@
-import RecentBlogs from '../features/postboard/RecentBlogs';
+import RecentBlogs from '../features/blogs/RecentBlogs';
 
 export default function Blogs() {
   return <RecentBlogs />;

@@ -16,7 +16,7 @@ export default function Blog() {
       <Button color='teal' onClick={() => navigate(-1)}>
         &larr; Back
       </Button>
-      <div className=' mx-auto w-5/6 lg:w-2/3 flex justify-center items-center flex-col'>
+      <div className=' mx-auto w-5/6 flex justify-center items-center flex-col'>
         <img className='w-[400px]' src={image} alt={title} />
         <h2 className='text-xl font-semibold py-5'>{title}</h2>
         <small>By: {author}</small>

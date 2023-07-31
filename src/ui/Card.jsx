@@ -1,22 +1,24 @@
-export default function Card({ children }) {
+import { NavLink } from 'react-router-dom';
+
+export default function Card({ children, id }) {
   return (
-    <li className='w-56 md:w-40 lg:w-56 rounded-lg shadow-lg shadow-gray-300 hover:scale-110 transition-all grid grid-rows-[3fr_1fr_3_1fr] grid-cols-1 place-items-center'>
-      {children}
-    </li>
+    <NavLink to={`${id}`}>
+      <li className='hover:scale-110 h-40 relative overflow-hidden group/card transition-all'>
+        {children}
+      </li>
+    </NavLink>
   );
 }
 
 function Image({ src, alt }) {
-  return (
-    <img className='h-40 w-full object-cover rounded-lg' src={src} alt={alt} />
-  );
+  return <img className='h-40 w-full object-cover' src={src} alt={alt} />;
 }
 
 function Title({ children }) {
   return (
-    <h2 className='text-center h-14 w-full text-sm font-semibold p-2 bg-gray-100 flex items-center justify-center'>
+    <div className='text-white text-sm text-center p-1 h-40 w-full bg-zinc-900 absolute top-[70%] group-hover/card:top-[40%] transition-all'>
       {children}
-    </h2>
+    </div>
   );
 }
 
@@ -29,7 +31,7 @@ function Author({ children }) {
 }
 
 function Body({ children }) {
-  return <p className='text-sm h-36 overflow-clip px-4 border-b'>{children}</p>;
+  return <p className='text-sm overflow-clip px-4 border-b'>{children}</p>;
 }
 
 Card.Image = Image;
