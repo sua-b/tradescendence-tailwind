@@ -67,6 +67,7 @@ export default function Form({ onFunc }) {
           className='input'
           type='text'
           id='label'
+          placeholder='Trading / Self-improvement / '
           {...register('label', { require: 'This field is required' })}
         />
         {!errors && <span>Error</span>}

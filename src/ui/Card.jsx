@@ -1,8 +1,13 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 export default function Card({ children, id, className = '' }) {
+  const location = useLocation();
+
   return (
-    <NavLink to={`${id}`} className={className}>
+    <NavLink
+      to={`${location.pathname === '/' ? 'blogs/' + id : id}`}
+      className={className}
+    >
       <li className='hover:scale-110 h-auto relative overflow-hidden group/card transition-all'>
         {children}
       </li>

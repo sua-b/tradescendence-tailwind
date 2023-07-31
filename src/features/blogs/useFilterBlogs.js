@@ -7,6 +7,5 @@ export default function useFilterBlogs({ category }) {
     queryFn: () => filterBlogs(category),
   });
 
-  console.log(data);
   return { filteredBlog: data, error, isLoading };
 }

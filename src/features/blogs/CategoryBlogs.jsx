@@ -5,11 +5,8 @@ import Button from '../../ui/Button';
 import useFilterBlogs from './useFilterBlogs';
 
 export default function CategoryBlogs({ category }) {
-  let toFilter;
-  if (category === '') toFilter = '';
-
   const { filteredBlog, isLoading } = useFilterBlogs({ category });
-  
+
   if (isLoading) return <Spinner />;
 
   return (
