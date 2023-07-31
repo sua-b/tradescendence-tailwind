@@ -6,7 +6,7 @@ import Button from '../../ui/Button';
 
 export default function RecentBlogs() {
   const { blogs, isLoading } = useBlogs();
-  const filter = blogs.filter((item, index) => index < 7);
+  const filter = blogs?.filter((item, index) => index < 7);
 
   if (isLoading) return <Spinner />;
 

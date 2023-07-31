@@ -6,7 +6,7 @@ export default function useBlog() {
   const { blogId } = useParams();
 
   const { data, error, isLoading } = useQuery({
-    queryKey: [`blogs`, blogId],
+    queryKey: ['blogs', blogId],
     queryFn: () => getBlog(blogId),
     retry: false,
   });

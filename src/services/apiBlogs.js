@@ -41,6 +41,17 @@ export async function addBlog(blogData) {
 
   if (error) throw new Error('Blog could not be added');
   if (storageError) throw new Error('Something wrong while uploading file');
+
   return data;
 }
 
+export async function filterBlogs(value) {
+  const { data, error } = await supabase
+    .from('blogs')
+    .select('*')
+    .eq('label', value);
+
+  if (error) throw new Error('Blog could not be added');
+
+  return data;
+}
