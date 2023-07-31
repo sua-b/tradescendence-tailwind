@@ -1,5 +1,5 @@
 import Form from '../../ui/Form';
-import useAddBlog from '../postboard/useAddBlog';
+import useAddBlog from '../blogs/useAddBlog';
 import Spinner from '../../ui/Spinner';
 
 export default function AddPost() {

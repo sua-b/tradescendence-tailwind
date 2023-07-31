@@ -3,7 +3,7 @@ import AppLayout from '../ui/AppLayout';
 import PageNotFound from '../pages/PageNotFound';
 import Home from '../pages/Home';
 import Blogs from '../pages/Blogs';
-import Blog from '../features/postboard/Blog';
+import Blog from '../features/blogs/Blog';
 import About from '../pages/About';
 import Manage from '../pages/Manage';
 

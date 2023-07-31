@@ -1,17 +1,23 @@
 import { NavLink } from 'react-router-dom';
 
-export default function Card({ children, id }) {
+export default function Card({ children, id, className = '' }) {
   return (
-    <NavLink to={`${id}`}>
-      <li className='hover:scale-110 h-40 relative overflow-hidden group/card transition-all'>
+    <NavLink to={`${id}`} className={className}>
+      <li className='hover:scale-110 h-auto relative overflow-hidden group/card transition-all'>
         {children}
       </li>
     </NavLink>
   );
 }
 
-function Image({ src, alt }) {
-  return <img className='h-40 w-full object-cover' src={src} alt={alt} />;
+function Image({ src, alt, className = '' }) {
+  return (
+    <img
+      className={`h-40 w-full object-cover ${className}`}
+      src={src}
+      alt={alt}
+    />
+  );
 }
 
 function Title({ children }) {

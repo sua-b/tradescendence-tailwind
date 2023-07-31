@@ -13,7 +13,7 @@ export default function Blog() {
 
   return (
     <>
-      <Button color='teal' onClick={() => navigate(-1)}>
+      <Button color='none' text='black' onClick={() => navigate(-1)}>
         &larr; Back
       </Button>
       <div className=' mx-auto w-5/6 flex justify-center items-center flex-col'>
@@ -22,9 +22,6 @@ export default function Blog() {
         <small>By: {author}</small>
         <p className='py-5'>{content}</p>
       </div>
-      <Button color='teal' onClick={() => navigate(-1)}>
-        &larr; Back
-      </Button>
     </>
   );
 }
