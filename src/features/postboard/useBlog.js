@@ -8,6 +8,7 @@ export default function useBlog() {
   const { data, error, isLoading } = useQuery({
     queryKey: [`blogs`, blogId],
     queryFn: () => getBlog(blogId),
+    retry: false,
   });
 
   return { blog: data, error, isLoading };

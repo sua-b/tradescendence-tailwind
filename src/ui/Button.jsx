@@ -17,7 +17,7 @@ export default function Button({
   children,
   size = 'small',
   color = 'blue',
-  type = 'submit',
+  type = '',
 }) {
   return (
     <button

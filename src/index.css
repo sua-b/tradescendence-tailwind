@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply font-k2d;
+    @apply font-k2d transition-all;
   }
 }
 

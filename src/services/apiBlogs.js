@@ -43,3 +43,4 @@ export async function addBlog(blogData) {
   if (storageError) throw new Error('Something wrong while uploading file');
   return data;
 }
+
