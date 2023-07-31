@@ -1,36 +1,29 @@
 import { NavLink } from 'react-router-dom';
-import {
-  LiaHomeSolid,
-  LiaBookOpenSolid,
-  LiaInfoCircleSolid,
-  LiaPaperPlane,
-} from 'react-icons/lia';
+
+const menuItem =
+  'text-md px-2 text-zinc-500 hover:text-zinc-800 aria-[current=page]:text-blue-700 aria-[current=page]:font-semibold';
 
 export default function Navbar() {
   return (
-    <nav className='justify-end items-center hidden md:flex'>
-      <ul className='invisible md:visible flex gap-2'>
+    <nav className='px-3 flex justify-start md:justify-end md:items-center'>
+      <ul className='flex gap-2'>
         <li>
           <NavLink to='/' className={menuItem}>
-            <LiaHomeSolid />
             <span>Home</span>
           </NavLink>
         </li>
         <li>
           <NavLink to='/blogs' className={menuItem}>
-            <LiaBookOpenSolid />
             <span>Blogs</span>
           </NavLink>
         </li>
         <li>
           <NavLink to='/about' className={menuItem}>
-            <LiaInfoCircleSolid />
             <span>About</span>
           </NavLink>
         </li>
         <li>
           <NavLink to='/manage' className={menuItem}>
-            <LiaPaperPlane />
             <span>Manage</span>
           </NavLink>
         </li>
@@ -38,6 +31,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-const menuItem =
-  'flex items-center gap-2 text-xl p-2 rounded-md hover:bg-gray-200  aria-[current=page]:bg-gray-200';

@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        k2d: ['K2D', 'Roboto'],
+        prompt: ['Roboto', 'prompt'],
       },
     },
   },
