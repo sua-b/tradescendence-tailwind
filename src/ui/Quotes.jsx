@@ -4,7 +4,7 @@ export default function Quotes() {
   const filter = quotes.filter((item, index) => item.id < 5);
 
   return (
-    <p className='font-semibold '>
+    <div className='font-semibold '>
       <h2 className='text-base tracking-tight text-red-800'>
         Mark Minervini's quotes
       </h2>
@@ -15,6 +15,6 @@ export default function Quotes() {
           </li>
         ))}
       </ul>
-    </p>
+    </div>
   );
 }

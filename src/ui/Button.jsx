@@ -6,7 +6,7 @@ const sizes = {
 const colors = {
   blue: 'bg-blue-500',
   teal: 'bg-teal-500',
-  green: 'bg-green-50',
+  green: 'bg-green-500',
   yellow: 'bg-yellow-500',
   red: 'bg-red-500',
   orage: 'bg-orange-500',
@@ -17,9 +17,14 @@ export default function Button({
   children,
   size = 'small',
   color = 'blue',
+  type = 'submit',
 }) {
   return (
-    <button className={`${sizes[size]}  ${colors[color]}`} onClick={onClick}>
+    <button
+      className={`${sizes[size]}  ${colors[color]}`}
+      onClick={onClick}
+      type={type}
+    >
       {children}
     </button>
   );

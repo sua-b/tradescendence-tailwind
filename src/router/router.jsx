@@ -3,8 +3,9 @@ import AppLayout from '../ui/AppLayout';
 import PageNotFound from '../pages/PageNotFound';
 import Home from '../pages/Home';
 import Blogs from '../pages/Blogs';
-import Blog from '../pages/Blog';
+import Blog from '../features/postboard/Blog';
 import About from '../pages/About';
+import Manage from '../pages/Manage';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: 'about',
         element: <About />,
+      },
+      {
+        path: 'manage',
+        element: <Manage />,
       },
     ],
   },

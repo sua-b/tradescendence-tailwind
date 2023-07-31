@@ -3,6 +3,7 @@ import {
   LiaHomeSolid,
   LiaBookOpenSolid,
   LiaInfoCircleSolid,
+  LiaPaperPlane,
 } from 'react-icons/lia';
 
 export default function Navbar() {
@@ -25,6 +26,12 @@ export default function Navbar() {
           <NavLink to='/about' className={menuItem}>
             <LiaInfoCircleSolid />
             <span>About</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/manage' className={menuItem}>
+            <LiaPaperPlane />
+            <span>Manage</span>
           </NavLink>
         </li>
       </ul>

@@ -7,3 +7,12 @@
     @apply font-k2d;
   }
 }
+
+@layer components {
+  .input {
+    @apply border border-solid border-gray-300 bg-gray-50 rounded-sm py-2 px-5 shadow-sm;
+  }
+  .textarea {
+    @apply border border-solid border-gray-300 bg-gray-50 rounded-sm pt-0 h-36 px-5 shadow-sm;
+  }
+}
