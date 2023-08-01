@@ -1,11 +1,10 @@
-import AddPost from '../features/manage/AddPost';
+import AddForm from '../features/manage/AddForm';
 
 export default function Manage() {
   return (
-    <div>
-      <div>
-        <AddPost />
-      </div>
+    <div className='h-full'>
+      {/* Add Tab selection */}
+      <AddForm />
     </div>
   );
 }

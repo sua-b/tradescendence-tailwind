@@ -3,8 +3,10 @@ import useBlogs from './useBlogs';
 import Spinner from '../../ui/Spinner';
 import HeaderMini from '../../ui/HeaderMini';
 import Button from '../../ui/Button';
+import { useNavigate } from 'react-router-dom';
 
 export default function RecentBlogs() {
+  const navigate = useNavigate();
   const { blogs, isLoading } = useBlogs();
   const filter = blogs?.filter((item, index) => index < 7);
 
@@ -23,7 +25,7 @@ export default function RecentBlogs() {
         ))}
       </ul>
       <div className='flex justify-end px-2'>
-        <Button color='indigo' text='white'>
+        <Button color='indigo' text='white' onClick={() => navigate('/blogs')}>
           View All Blogs
         </Button>
       </div>

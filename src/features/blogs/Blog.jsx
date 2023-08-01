@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../ui/Button';
 import Spinner from '../../ui/Spinner';
 import useBlog from './useBlog';
+import MDEditor from '@uiw/react-md-editor';
 
 export default function Blog() {
   const { blog, isLoading } = useBlog();
@@ -13,14 +14,15 @@ export default function Blog() {
 
   return (
     <>
-      <Button color='none' text='black' onClick={() => navigate(-1)}>
+      <Button color='none' size='medium' onClick={() => navigate('/blogs')}>
         &larr; Back
       </Button>
-      <div className=' mx-auto w-5/6 flex justify-center items-center flex-col'>
+      <div className=' mx-auto w-5/6 flex justify-center items-center flex-col whitespace-pre-line'>
         <img className='w-[400px]' src={image} alt={title} />
         <h2 className='text-xl font-semibold py-5'>{title}</h2>
         <small>By: {author}</small>
-        <p className='py-5'>{content}</p>
+
+        <MDEditor.Markdown source={content} />
       </div>
     </>
   );

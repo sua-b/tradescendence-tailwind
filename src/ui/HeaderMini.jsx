@@ -6,7 +6,7 @@ export default function HeaderMini({ children }) {
       <div className='h-8 p-1 px-2 text-sm tracking-wide  text-white bg-fuchsia-700 '>
         {children}
       </div>
-      <div className='h-2 w-full bg-gradient-to-r from-fuchsia-700 to-indigo-500 self-end'></div>
+      <div className='h-2 w-full bg-gradient-to-r from-fuchsia-700 to-indigo-700 self-end'></div>
     </div>
   );
 }

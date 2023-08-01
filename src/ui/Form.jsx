@@ -1,7 +1,10 @@
 import { useForm } from 'react-hook-form';
 import Button from './Button';
+import MDEditor from '@uiw/react-md-editor';
+import { useState } from 'react';
 
 export default function Form({ onFunc }) {
+  const [value, setValue] = useState();
   const {
     register,
     handleSubmit,
@@ -10,8 +13,8 @@ export default function Form({ onFunc }) {
   } = useForm();
 
   function onSubmit(data) {
-    onFunc(data);
-    reset;
+    onFunc({ ...data, content: value });
+    // reset;
   }
 
   function onError(errors) {
@@ -51,14 +54,18 @@ export default function Form({ onFunc }) {
         <label className='font-semibold text-lg' htmlFor='content'>
           Content
         </label>
+        <MDEditor value={value} onChange={setValue} />
+
+        {/* 
         <textarea
           className='textarea '
           type='text'
           id='content'
           {...register('content', { require: 'This field is required' })}
         />
-        {!errors && <span>Error</span>}
+        {!errors && <span>Error</span>} */}
       </div>
+
       <div className='grid items-center grid-cols-[1fr_3fr_0.5fr] gap-5 py-2 px-0 first:pt-0 last:pb-0'>
         <label className='font-semibold text-lg' htmlFor='label'>
           Label

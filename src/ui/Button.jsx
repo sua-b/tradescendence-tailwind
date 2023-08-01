@@ -1,6 +1,6 @@
 const sizes = {
-  small: 'px-2 py-1 border-0 rounded-md text-white text-sm m-2',
-  medium: 'px-3 py-1 border-0 rounded-md text-white text-md font-semibold m-2',
+  small: 'px-2 py-1 border-0 rounded-sm text-sm m-2',
+  medium: 'px-3 py-1 border-0 rounded-sm text-md font-semibold m-2',
 };
 
 const colors = {

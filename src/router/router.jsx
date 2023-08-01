@@ -6,6 +6,7 @@ import Blogs from '../pages/Blogs';
 import Blog from '../features/blogs/Blog';
 import About from '../pages/About';
 import Manage from '../pages/Manage';
+import BlogCategory from '../pages/BlogCategory';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: 'blogs/:blogId',
         element: <Blog />,
+      },
+      {
+        path: 'blogs/category/:category',
+        element: <BlogCategory />,
       },
       {
         path: 'about',

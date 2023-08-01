@@ -22,11 +22,10 @@ export async function getBlog(blogId) {
 
 export async function addBlog(blogData) {
   //1. รับ obj blog มา
-
+  // console.log(blogData);
   //2.ตั้ง imageName
   const imageName = `${Math.random()}-${blogData.image[0].name}`;
   //3.ตั้ง path จาก storage
-  ///storage/v1/object/public/postsImage/363818807_777828677474610_744657336193323300_n.jpg
   const imagePath = `${supabaseUrl}/storage/v1/object/public/postsImage/${imageName}`;
 
   // add obj
