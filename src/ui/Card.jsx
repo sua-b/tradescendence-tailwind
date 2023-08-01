@@ -1,51 +1,29 @@
 import { NavLink, useLocation } from 'react-router-dom';
 
-export default function Card({ children, id, className = '' }) {
+export default function Card({ children, id }) {
+  //see url location
   const location = useLocation();
 
   return (
-    <NavLink
-      to={`${location.pathname === '/' ? 'blogs/' + id : id}`}
-      className={className}
-    >
-      <li className='hover:scale-110 h-auto relative overflow-hidden group/card transition-all'>
+    <li className='hover:scale-105 h-auto overflow-clip transition-all relative group/card'>
+      <NavLink to={`${location.pathname === '/' ? 'blogs/' + id : id}`}>
         {children}
-      </li>
-    </NavLink>
+      </NavLink>
+    </li>
   );
 }
 
-function Image({ src, alt, className = '' }) {
-  return (
-    <img
-      className={`h-40 w-full object-cover ${className}`}
-      src={src}
-      alt={alt}
-    />
-  );
+function Image({ src, alt }) {
+  return <img className='h-48 w-full object-cover' src={src} alt={alt} />;
 }
 
 function Title({ children }) {
   return (
-    <div className='text-white text-sm text-center p-1 h-40 w-full bg-zinc-900 absolute top-[70%] group-hover/card:top-[40%] transition-all'>
+    <div className='h-36 w-full py-1 px-2 text-center text-md text-white bg-stone-900 bg-opacity-90 absolute top-2/3 transition-all group-hover/card:top-1/3'>
       {children}
     </div>
   );
 }
 
-function Author({ children }) {
-  return (
-    <p className='text-center text-sm text-gray-500 truncate w-full px-4'>
-      {children}
-    </p>
-  );
-}
-
-function Body({ children }) {
-  return <p className='text-sm overflow-clip px-4 border-b'>{children}</p>;
-}
-
 Card.Image = Image;
 Card.Title = Title;
-Card.Body = Body;
-Card.Author = Author;

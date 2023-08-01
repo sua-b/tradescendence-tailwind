@@ -1,138 +1,70 @@
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import MDEditor from '@uiw/react-md-editor';
-import useAddBlog from './useAddBlog';
+import Form from '../../ui/Form';
+import FormRow from '../../ui/FormRow';
+import FormMD from '../../ui/FormMD'
 import Button from '../../ui/Button';
-import HeaderMini from '../../ui/HeaderMini';
 
-const inputStyles =
-  'border border-solid border-gray-300 rounded-sm focus:outline-none leading-7 ';
-const inputRowStyles = 'grid px-4 gap-1 grid-cols-[1fr_5fr] relative';
+import useAddBlog from './useAddBlog';
+import { useState } from 'react';
 
 export default function AddForm() {
+  const [mdText,setMdText] = useState('')
   const { addBlog, isAdding } = useAddBlog();
-
-  const [value, setValue] = useState('');
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
     reset,
-  } = useForm({
-    defaultValues: {
-      title: '',
-      author: '',
-      label: '',
-      image: '',
-      content: '',
-    },
-  });
+    formState: { errors },
+  } = useForm();
 
   function onSubmit(data) {
+    console.log({ ...data, content: mdText });
     // addBlog({ ...data, content: value });
-    // reset;
   }
 
   function onError(errors) {
     // console.log(errors);
   }
 
-  function onReset() {
-    reset;
-    setValue('');
+  function onReset(){
+    reset();
+    setMdText('')
   }
 
-  if (isAdding) return <Spinner />;
-
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit, onError)}
-      className='bg-gray-100 py-1 flex flex-col gap-2 '
-    >
-      <HeaderMini>Add Blog</HeaderMini>
+    <Form handleSubmit={handleSubmit(onSubmit, onError)}>
 
-      <div className={inputRowStyles}>
-        <label className='text-md lg:pl-10' htmlFor='title'>
-          Title
-        </label>
-        <input
-          className={
-            errors?.title
-              ? inputStyles + 'ring-2 ring-offset-1 ring-red-300'
-              : inputStyles
-          }
-          type='text'
-          id='title'
-          {...register('title', {
-            required: 'This field is required',
-          })}
-        />
-      </div>
+      <FormRow label='Title' name='title' type='text' errors={errors} register={...register('title',{required:'This field is required'})}/>
 
-      <div className={inputRowStyles}>
-        <label className='text-md lg:pl-10' htmlFor='author'>
-          Author
-        </label>
-        <input
-          className={
-            errors?.author
-              ? inputStyles + 'ring-2 ring-offset-1 ring-red-300'
-              : inputStyles
-          }
-          type='text'
-          id='author'
-          {...register('author', { required: 'This field is required' })}
-        />
-      </div>
+      <FormRow label='Author' name='author' type='text' errors={errors} register={...register('author',{required:'This field is required'})}/>
 
-      <div className={inputRowStyles}>
-        <label className='text-md lg:pl-10' htmlFor='content'>
-          Content
-        </label>
-        <div className={!value && 'ring-2 ring-offset-1 ring-red-300'}>
-          <MDEditor value={value} onChange={setValue} />
-        </div>
-      </div>
+      <FormRow label='Label' name='label' type='text' errors={errors} register={...register('label',{required:'This field is required'})}/>
 
-      <div className={inputRowStyles}>
-        <label className='text-md lg:pl-10' htmlFor='label'>
-          Label
-        </label>
-        <input
-          className={
-            errors?.label
-              ? inputStyles + 'ring-2 ring-offset-1 ring-red-300'
-              : inputStyles
-          }
-          type='text'
-          id='label'
-          placeholder=' Add category'
-          {...register('label', { required: 'This field is required' })}
-        />
-      </div>
+      <FormRow label='Image' name='image' type='file' errors={errors} register={...register('image',{required:'Please choose an image'})}/>
 
-      <div className={inputRowStyles}>
-        <label className='text-md lg:pl-10' htmlFor='image'>
-          Image
-        </label>
-        <input
-          className='file:bg-green-100 file:border file:border-solid file:border-green-400'
-          type='file'
-          accept='image/*'
-          id='image'
-          {...register('image', { required: 'This field is required' })}
-        />
+      <FormMD label='Content' name='content' mdText={mdText} setMdText={setMdText}/>
+      <div className='flex justify-center'> 
+        <Button
+        type='submit'
+        color='teal'
+        size='small'
+        text='white'
+        disabled={isAdding}
+      >
+        Submit
+      </Button>
+      <Button
+        type='reset'
+        color='red'
+        size='small'
+        text='white'
+        onClick={onReset}
+      >
+        Cancel
+      </Button>
       </div>
-
-      <div className='flex justify-center'>
-        <Button type='submit' color='indigo' text='white'>
-          Submit
-        </Button>
-        <Button type='reset' color='red' text='white' onClick={onReset}>
-          Cancel
-        </Button>
-      </div>
-    </form>
+     
+    </Form>
   );
 }

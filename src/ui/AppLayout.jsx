@@ -12,5 +12,3 @@ export default function AppLayout() {
     </div>
   );
 }
-
-//grid grid-cols-1 grid-rows-[auto_1fr_auto] md:grid-cols-[12rem_1fr] md:grid-rows-[auto_1fr] h-[100dvh] w-[100vw] overflow-y-scroll

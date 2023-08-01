@@ -2,23 +2,25 @@ import { colors } from '../constant/bg-color';
 import { textColors } from '../constant/text-colors';
 
 const sizes = {
-  small: 'px-2 py-1 border-0 rounded-sm text-sm m-2',
-  medium: 'px-3 py-1 border-0 rounded-sm text-md font-semibold m-2',
+  small: 'h-7 px-2 py-1 m-2 text-sm',
+  medium: 'h-9 px-3 py-1 m-2 text-md',
 };
 
 export default function Button({
-  onClick,
   children,
-  size = 'small',
-  color = 'none',
+  onClick,
+  disabled,
   type = '',
+  color = 'none',
   text = 'black',
+  size = 'small',
 }) {
   return (
     <button
       className={`${sizes[size]} ${colors[color]} ${textColors[text]}`}
       onClick={onClick}
       type={type}
+      disabled={disabled}
     >
       {children}
     </button>
