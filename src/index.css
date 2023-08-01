@@ -9,4 +9,10 @@
   ol {
     @apply list-decimal;
   }
+  input[type='text'] {
+    @apply border border-solid border-gray-300 rounded-sm focus:outline-none leading-7;
+  }
+  input[type='file'] {
+    @apply file:bg-gray-100 file:border file:border-solid file:border-gray-400 file:mr-2;
+  }
 }
