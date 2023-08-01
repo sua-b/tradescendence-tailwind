@@ -19,8 +19,8 @@ export default function AddForm() {
   } = useForm();
 
   function onSubmit(data) {
-    console.log({ ...data, content: mdText });
-    // addBlog({ ...data, content: value });
+    // console.log({ ...data, content: mdText });
+    addBlog({ ...data, content: value });
   }
 
   function onError(errors) {

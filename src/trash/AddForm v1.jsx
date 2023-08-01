@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import MDEditor from '@uiw/react-md-editor';
-import Button from '../../ui/Button';
-import HeaderMini from '../../ui/HeaderMini';
+import Button from '../ui/Button';
+import HeaderMini from '../ui/HeaderMini';
 
-import useAddBlog from './useAddBlog';
+import useAddBlog from '../features/manage/useAddBlog';
 const inputStyles =
   'border border-solid border-gray-300 rounded-sm focus:outline-none leading-7 ';
 const inputRowStyles = 'grid px-4 gap-1 grid-cols-[1fr_5fr] relative';
