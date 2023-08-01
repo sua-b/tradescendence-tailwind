@@ -20,7 +20,7 @@ export default function AddForm() {
 
   function onSubmit(data) {
     // console.log({ ...data, content: mdText });
-    // addBlog({ ...data, content: value });
+    addBlog({ ...data, content: mdText });
   }
 
   function onError(errors) {

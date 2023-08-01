@@ -5,7 +5,7 @@ import { useState } from 'react';
 import DeleteTable from '../features/manage/DeleteTable';
 
 export default function Manage() {
-  const [activeTab, setActiveTab] = useState('2');
+  const [activeTab, setActiveTab] = useState('1');
 
   return (
     <>

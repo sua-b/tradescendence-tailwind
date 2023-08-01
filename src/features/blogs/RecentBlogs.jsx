@@ -8,7 +8,10 @@ import { useNavigate } from 'react-router-dom';
 export default function RecentBlogs() {
   const navigate = useNavigate();
   const { blogs, isLoading } = useBlogs();
-  const filter = blogs?.filter((item, index) => index < 7);
+
+  let reversed = [...blogs].reverse();
+
+  const filter = reversed?.filter((item, index) => index < 8);
 
   if (isLoading) return <Spinner />;
 
@@ -16,7 +19,7 @@ export default function RecentBlogs() {
     <>
       <HeaderMini color='orange'>Recent blogs</HeaderMini>
 
-      <ul className='px-4 grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '>
+      <ul className='px-4 grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 '>
         {filter?.map((item) => (
           <Card key={item.id} id={item.id} className='first:col-span-2 '>
             <Card.Image src={item.image} alt={item.title} />

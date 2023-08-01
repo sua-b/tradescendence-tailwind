@@ -4,12 +4,12 @@ export default function About() {
       <h1 className='text-center text-2xl font-semibold pb-3'>About</h1>
       <p className='font-semibold'>What is this page?</p>
       <p className=''>
-        First, this page is created for keeping articles related to personal
-        development, self-improvement, devoloping a growth mindset, and
+        This page is created for keeping articles related to personal
+        development, self-improvement, developing a growth mindset, and
         overcoming struggles in life.
       </p>
       <p className=''>
-        Second, investing and trading are my interests. I also want to keep
+        Also, investing and trading are my interests. I also want to keep
         quotes of one of the greatest stocks trader, Mark Minervini.
       </p>
       <blockquote className='italic px-5'>

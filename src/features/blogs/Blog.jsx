@@ -20,7 +20,7 @@ export default function Blog() {
       <div className=' mx-auto w-5/6 flex justify-center items-center flex-col whitespace-pre-line'>
         <img className='w-[400px]' src={image} alt={title} />
         <h2 className='text-xl font-semibold py-5'>{title}</h2>
-        <small>By: {author}</small>
+        <small className='pb-3'>By: {author}</small>
 
         <MDEditor.Markdown source={content} />
       </div>
