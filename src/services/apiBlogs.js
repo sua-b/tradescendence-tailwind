@@ -54,3 +54,10 @@ export async function filterBlogs(value) {
 
   return data;
 }
+
+export async function deleteBlog(id) {
+  const { error } = await supabase.from('blogs').delete().eq('id', id);
+
+  if (error) throw new Error('Blog could not be deleted');
+  return error;
+}
