@@ -1,8 +1,7 @@
 import { RaceBy } from '@uiball/loaders';
-import { screenW } from '../constant/screen';
 
 export default function Spinner() {
-  const width = screenW;
+  const width = window.innerWidth;
 
   return (
     <div className='py-[10rem] flex items-center justify-center'>

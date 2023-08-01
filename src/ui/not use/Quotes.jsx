@@ -1,4 +1,4 @@
-import quotes from '../data/markquotes';
+import quotes from '../../data/markquotes';
 
 export default function Quotes() {
   const filter = quotes.filter((item, index) => item.id < 5);

@@ -18,7 +18,7 @@ export default function CategoryBlogs({ category }) {
 
   return (
     <div>
-      <HeaderMini>{path}</HeaderMini>
+      <HeaderMini color='rose'>{path}</HeaderMini>
 
       <BlogsTile blogs={filteredBlog} size={category ? 'half' : 'full'} />
 

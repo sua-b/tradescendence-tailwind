@@ -14,7 +14,7 @@ export default function RecentBlogs() {
 
   return (
     <>
-      <HeaderMini>Recent blogs</HeaderMini>
+      <HeaderMini color='orange'>Recent blogs</HeaderMini>
 
       <ul className='px-4 grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '>
         {filter?.map((item) => (
