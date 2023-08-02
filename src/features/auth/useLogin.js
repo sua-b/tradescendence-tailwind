@@ -11,7 +11,7 @@ export default function useLogin() {
     onSuccess: (user) => {
       queryClient.setQueryData(['user'], user.user);
       toast.success('Welcome back!');
-      navigate('/', { replace: true });
+      navigate('/user/manage');
     },
   });
   return { login: mutate, isLoggingIn: isLoading };

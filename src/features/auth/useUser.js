@@ -4,7 +4,7 @@ import { userStatusApi } from '../../services/apiAuthentication';
 export default function useUser() {
   const { data: getUser, isLoading } = useQuery({
     queryFn: userStatusApi,
-    queryKey: ['user/test'],
+    queryKey: ['user'],
   });
 
   return {

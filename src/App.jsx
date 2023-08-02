@@ -24,17 +24,17 @@ function App() {
           containerStyle={{ margin: '8px' }}
           toastOptions={{
             success: {
-              duration: 3000,
+              duration: 2000,
             },
             error: {
-              duration: 5000,
+              duration: 2000,
             },
             style: {
               fontSize: '16px',
               maxWidth: '500px',
               padding: '16px 24px',
-              backgroundColor: 'var(--color-grey-0)',
-              color: 'var(--color-grey-700)',
+              backgroundColor: 'bg-white',
+              color: 'bg-stone-900',
             },
           }}
         />
