@@ -1,12 +1,10 @@
 import { NavLink } from 'react-router-dom';
 
-export default function Logo() {
+export default function Logo({ src, children, className }) {
   return (
-    <NavLink className='h-10 py-1 px-3 flex items-start' to='/'>
-      <img className='h-10' src='/icon.png' alt='logo' />
-      <span className='text-lg font-bold text-blue-700 m-1'>
-        Tradescendence
-      </span>
+    <NavLink className='h-auto py-1 px-3 flex items-start' to='/'>
+      <img className={className} src={src} alt='logo' />
+      {children}
     </NavLink>
   );
 }

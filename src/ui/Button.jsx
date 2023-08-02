@@ -1,4 +1,5 @@
 import { colors } from '../constant/bg-color';
+import { colors as colorsHover } from '../constant/bg-color-hover';
 import { textColors } from '../constant/text-colors';
 
 const sizes = {
@@ -15,9 +16,11 @@ export default function Button({
   text = 'black',
   size = 'small',
 }) {
+  const styles = ` ${sizes[size]} ${colors[color]} ${textColors[text]} hover:${colorsHover[color]} transition`;
+
   return (
     <button
-      className={`${sizes[size]} ${colors[color]} ${textColors[text]}`}
+      className={styles}
       onClick={onClick}
       type={type}
       disabled={disabled}

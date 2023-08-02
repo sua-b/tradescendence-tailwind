@@ -6,9 +6,12 @@ import Blogs from '../pages/Blogs';
 import Blog from '../features/blogs/Blog';
 import About from '../pages/About';
 import Manage from '../pages/Manage';
+import Login from '../pages/Login';
 import BlogCategory from '../pages/BlogCategory';
+import ProtectedRoute from '../ProtectedRoute';
 
 const router = createBrowserRouter([
+  //public
   {
     element: <AppLayout />,
     errorElement: <PageNotFound />,
@@ -33,11 +36,20 @@ const router = createBrowserRouter([
         path: 'about',
         element: <About />,
       },
-      {
-        path: 'manage',
-        element: <Manage />,
-      },
     ],
+  },
+  // private
+  {
+    path: 'user',
+    element: <Login />,
+  },
+  {
+    path: 'user/manage',
+    element: (
+      <ProtectedRoute>
+        <Manage />
+      </ProtectedRoute>
+    ),
   },
 ]);
 

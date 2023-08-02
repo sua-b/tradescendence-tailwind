@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply font-prompt antialiased;
+    @apply font-prompt antialiased scroll-auto;
   }
   ol {
     @apply list-decimal;
