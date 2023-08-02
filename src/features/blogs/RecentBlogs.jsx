@@ -9,10 +9,7 @@ export default function RecentBlogs() {
   const navigate = useNavigate();
   const { blogs, isLoading } = useBlogs();
 
-  let reversed = [...blogs].reverse();
-
-  const filter = reversed?.filter((item, index) => index < 8);
-
+  const filter = blogs?.filter((item, index) => index < 8);
   if (isLoading) return <Spinner />;
 
   return (

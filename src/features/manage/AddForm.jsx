@@ -52,12 +52,20 @@ export default function AddForm() {
         />
       </FormRow>
       <FormRow label='Label'>
-        <input
+        {/* <input
           type='text'
           id='label'
           {...register('label', { required: true })}
           className={errors?.label && 'ring-2 ring-offset-1 ring-red-300'}
-        />
+        /> */}
+
+        <select id='label' {...register('label')}>
+          <option value='Trading'>Trading</option>
+          <option value='Finance'>Finance</option>
+          <option value='Motivation'>Motivation</option>
+          <option value='Life lessons'>Life lessons</option>
+          <option value='Habits'>Habits</option>
+        </select>
       </FormRow>
 
       <FormRow label='Image'>

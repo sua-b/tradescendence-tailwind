@@ -8,10 +8,11 @@ export default function BlogRow({ blog }) {
   return (
     <>
       <Table.Row>
-        <span>{id}</span>
         <span>{title}</span>
         <span>{author}</span>
-        <span className='hidden md:inline'>{content}</span>
+        <span className='hidden md:inline h-40 overflow-hidden text-ellipsis'>
+          {content}
+        </span>
         <button
           className='text-lg justify-self-end'
           disabled={isDeleting}

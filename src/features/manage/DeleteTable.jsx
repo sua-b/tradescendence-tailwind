@@ -13,7 +13,6 @@ export default function DeleteTable() {
     <div className='bg-gray-100 mx-4 flex flex-col gap-2'>
       <Table>
         <Table.Header>
-          <div>ID</div>
           <div>Title</div>
           <div>Author</div>
           <div className='hidden md:inline'>Content</div>

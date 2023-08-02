@@ -7,7 +7,10 @@ export default function Home() {
       <RecentBlogs />
       <div className='grid grid-cols-1 sm:grid-cols-2'>
         <CategoryBlogs category='Trading' />
-        <CategoryBlogs category='Self-improvement' />
+        <CategoryBlogs category='Finance' />
+        <CategoryBlogs category='Motivation' />
+        <CategoryBlogs category='Life lessons' />
+        <CategoryBlogs category='Habits' />
       </div>
     </div>
   );

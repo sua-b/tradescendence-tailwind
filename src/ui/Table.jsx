@@ -1,5 +1,5 @@
 const styles =
-  'grid grid-cols-[0.2fr_1fr_1fr_0.2fr] md:grid-cols-[0.2fr_1fr_1fr_2.4fr_0.3fr] text-xs md:text-sm gap-2 py-3 px-3 ';
+  'grid grid-cols-[1fr_1fr_0.2fr] md:grid-cols-[1fr_0.8fr_2.4fr_0.3fr] text-xs md:text-sm gap-2 py-3 px-3 ';
 
 export default function Table({ children }) {
   return (

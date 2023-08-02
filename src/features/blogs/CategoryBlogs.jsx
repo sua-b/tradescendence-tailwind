@@ -13,14 +13,14 @@ export default function CategoryBlogs({ category }) {
   let path = category || params.category;
 
   const { filteredBlog, isLoading } = useFilterBlogs({ path });
-  const reversed = [...filteredBlog].reverse();
+
   if (isLoading) return <Spinner />;
 
   return (
     <div>
       <HeaderMini color='rose'>{path}</HeaderMini>
 
-      <BlogsTile blogs={reversed} size={category ? 'half' : 'full'} />
+      <BlogsTile blogs={filteredBlog} size={category ? 'half' : 'full'} />
 
       <div className='flex justify-end px-2'>
         <Button

@@ -1,7 +1,10 @@
 import supabase, { supabaseUrl } from './supabase';
 
 export async function getBlogs() {
-  const { data, error } = await supabase.from('blogs').select('*');
+  const { data, error } = await supabase
+    .from('blogs')
+    .select('*')
+    .order('id', { ascending: false });
 
   if (error) throw new Error('Blogs could not be loaded');
 
@@ -48,7 +51,8 @@ export async function filterBlogs(value) {
   const { data, error } = await supabase
     .from('blogs')
     .select('*')
-    .eq('label', value);
+    .eq('label', value)
+    .order('id', { ascending: false });
 
   if (error) throw new Error('Blog could not be added');
 
