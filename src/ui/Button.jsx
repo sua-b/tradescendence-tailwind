@@ -16,7 +16,7 @@ export default function Button({
   text = 'black',
   size = 'small',
 }) {
-  const styles = ` ${sizes[size]} ${colors[color]} ${textColors[text]} hover:${colorsHover[color]} transition`;
+  const styles = ` ${sizes[size]} ${colors[color]} ${textColors[text]} ${colorsHover[color]} transition`;
 
   return (
     <button

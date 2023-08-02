@@ -3,7 +3,7 @@ export const colors = {
   red: 'bg-red-500',
   orange: 'bg-orange-500',
   amber: 'bg-amber-500',
-  yellow: 'bg-yellow-500',
+  yellow: 'bg-yellow-600',
   lime: 'bg-lime-500',
   green: 'bg-green-500',
   emerald: 'bg-emerald-500',

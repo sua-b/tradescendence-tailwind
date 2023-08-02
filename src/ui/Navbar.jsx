@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { BiUserCircle } from 'react-icons/bi';
 
 const menuItem =
   'text-md px-3 text-zinc-500 hover:text-zinc-800 aria-[current=page]:text-blue-700 aria-[current=page]:font-semibold';
@@ -23,7 +24,7 @@ export default function Navbar() {
       </li>
       <li>
         <NavLink to='/user' className={menuItem}>
-          Sign in
+          <BiUserCircle />
         </NavLink>
       </li>
     </ul>
