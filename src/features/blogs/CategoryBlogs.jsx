@@ -23,13 +23,15 @@ export default function CategoryBlogs({ category }) {
       <BlogsTile blogs={filteredBlog} size={category ? 'half' : 'full'} />
 
       <div className='flex justify-end px-2'>
-        <Button
-          color='indigo'
-          text='white'
-          onClick={() => navigate(`/blogs/category/${category}`)}
-        >
-          View {path} Blogs
-        </Button>
+        {!params?.category && (
+          <Button
+            color='indigo'
+            text='white'
+            onClick={() => navigate(`/blogs/category/${category}`)}
+          >
+            View {path} Blogs
+          </Button>
+        )}
       </div>
     </div>
   );
